@@ -1,0 +1,44 @@
+
+<div class="row">
+	<div class="large-4 columns">Deployment</div>
+<!-- 	<div class="large-4 columns">Package</div> -->
+	<div class="large-4 columns">Url</div>
+	<div class="large-4 columns">Deployment type</div>
+</div>
+
+<div data-bind="foreach: domains">
+	<div class="row">
+		<div class="large-4 columns">
+			<a data-bind="attr:{href: url} ,visible: (hasWebBundle||isStatic)"> <span
+				data-bind="text: deployment"></span>
+			</a>
+			<!-- /ko -->
+			<div data-bind="visible: !(hasWebBundle||isStatic)">
+				<span data-bind="text: deployment"></span>
+			</div>
+		</div>
+<!-- 		<div class="large-4 columns"> -->
+<!-- 			<a data-bind="attr:{href: url} ,visible: (hasWebBundle||isStatic)"> <span -->
+<!-- 				data-bind="text: packageName"></span> -->
+<!-- 			</a> -->
+<!-- 			<div data-bind="visible: (hasWebBundle||isStatic)"> -->
+<!-- 				<span data-bind="text: packageName"></span> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		<div class="large-4 columns">
+			<a data-bind="attr:{href: url} ,visible: (hasWebBundle||isStatic)"> <span
+				data-bind="text: url"></span>
+			</a>
+			<div data-bind="visible: !(hasWebBundle||isStatic)">
+				<span data-bind="text: url"></span>
+			</div>
+
+		</div>
+		<div class="large-4 columns">
+			<span data-bind="if: !isStatic&&hasWebBundle">web</span> 
+			<span data-bind="if: !isStatic&&hasWebBundle && hasServerExtensionBundle"> + </span>
+			<span data-bind="if: !isStatic&&hasServerExtensionBundle">server extension</span>
+			<span data-bind="if: isStatic">static</span> 
+		</div>
+	</div>
+</div>

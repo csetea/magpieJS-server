@@ -1,0 +1,68 @@
+@color-red: lighten(red, 10%);
+@color-example: lighten(green, 10%);
+@color-example-hello: lighten(@color-example, 40%);
+
+
+.logo{
+	font-weight: bold;
+}
+
+.red{
+	color: @color-red;
+	font-weight: normal;
+}
+
+body>footer .logo{
+/* 	color: lighten(blue,10%); */
+}
+	
+body>footer{
+/* 	background: black; */
+
+	margin-top: 3em;
+	margin-bottom: 3em;
+	text-align: center;
+	color: lighten(black,40%);
+}
+
+
+.center{
+	text-align: center;
+	
+}
+
+body>section>section{
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+header{
+	border-bottom: 1px solid lightBlue;
+}
+
+footer{
+	border-top: 1px solid lightBlue;
+	padding-top: 1em;
+}
+
+section{
+	padding: 1em;
+}
+
+m-view{
+	display: block;
+	background: white;
+	padding: 1em;
+	
+}
+
+body div{
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
